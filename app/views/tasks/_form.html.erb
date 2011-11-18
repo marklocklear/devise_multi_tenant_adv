@@ -1,0 +1,14 @@
+<%= form_for @task do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :user %><br />
+    <%=
+        collection_select(:task, :user_id, @users, :id, :email)
+    %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

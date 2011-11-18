@@ -1,0 +1,21 @@
+<% title "Task" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+<p>
+  <strong>Organization:</strong>
+  <%= @task.user.organization.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_task_path(@task) %> |
+  <%= link_to "Destroy", @task, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tasks_path %>
+</p>
